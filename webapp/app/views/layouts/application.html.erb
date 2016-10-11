@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Webapp</title>
+    <title>PepperSoda</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,36 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
-</html>
+	<h1 class="brand_title">
+    <%= link_to 'PepperSoda', controller: 'welcome' %>
+  </h1>
+	<div class="nav">
+		<ul>
+			<li>
+			<%= link_to 'Home', controller: 'welcome' %>
+			</li>
+			<li>
+			<!-- change this to forums controller soon.... -->
+				<%= link_to 'Forums', controller: 'articles' %>
+			</li>
+			<li>
+				<%= link_to 'Products', controller: 'welcome' %>
+			</li>
+			<li>
+				<%= link_to 'Gallery', controller: 'welcome' %>
+			</li>
+			<li>
+				<%= link_to 'Live', controller: 'welcome' %>
+			</li>
+			<li>
+				<%= link_to 'About', controller: 'welcome' %>
+			</li>
+		</ul>
+	</div>
+	<div class="chat">
+		Chat tab
+	</div>
+	<div class="content">
+	    <%= yield %>
+  	</div>
+</body>

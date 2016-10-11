@@ -14,12 +14,14 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: <%= ENV['WEBAPP_DATABASE_PASSWORD'] %> 
+socket: /tmp/mysql.sock
 
 development:
   <<: *default
   database: webapp_development
+  username: root
+  password: <%= ENV['WEBAPP_DATABASE_PASSWORD'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

@@ -14,7 +14,7 @@
  *= require_self
  */
 
-body{background-color: #41bbfc;color:white;
+body{min-width:700px;background-color: #41bbfc;color:white;
 	background-image: radial-gradient(white 15%, transparent 16%),radial-gradient(white 15%, transparent 16%);
 	background-size:60px 60px;
 	background-position: 0 0, 30px 30px;}
@@ -30,5 +30,6 @@ li{list-style: none;display: inline-block;padding:5px 10px 10px 5px; border-bott
 h1{font-family: helvetica}
 div{padding-bottom: 5px;}
 .chat{float:right;padding:25px;border:1px black solid;color:black;}
-.newthread{background-color: black;padding: 5px; border: solid white 1px;}
+div.newthread{max-width: 300px;min-width: 100px;margin-left: auto;margin-right: auto;}
+.newthread a{background-color: black;padding: 5px; border: solid white 1px;}
 .brand_title a{color:red;}

@@ -34,3 +34,4 @@ div{padding-bottom: 5px;}
 div.newthread{max-width: 300px;min-width: 100px;margin-left: auto;margin-right: auto;}
 .newthread a{background-color: black;padding: 5px; border: solid white 1px;}
 .brand_title a{color:red;}
+#messages{max-height: 450px;overflow-y: auto; .avatar{margin: 0.5rem;}}

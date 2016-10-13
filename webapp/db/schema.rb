@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013005909) do
+ActiveRecord::Schema.define(version: 20161013023013) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 20161013005909) do
     t.index ["article_id"], name: "index_comments_on_article_id", using: :btree
   end
 
+  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "body",         limit: 65535
+    t.integer  "user_id"
+    t.integer  "chat_room_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -55,4 +65,6 @@ ActiveRecord::Schema.define(version: 20161013005909) do
 
   add_foreign_key "chat_rooms", "users"
   add_foreign_key "comments", "articles"
+  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "users"
 end

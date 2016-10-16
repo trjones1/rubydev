@@ -5,7 +5,7 @@ jQuery(document).on 'turbolinks:load', ->
 		
 		messages_to_bottom()
 
-		App.global_chat = App.cable.subscriptions.create{
+		App.global_chat = App.cable.subscriptions.create {
 			channel: "ChatRoomsChannel"
 			chat_room_id: messages.data('chat-room-id')
 		}, 

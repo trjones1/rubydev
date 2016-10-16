@@ -31,3 +31,7 @@ jQuery(document).on 'turbolinks:load', ->
 				textarea.val('')
 			e.preventDefault()
 			return false
+		$('#message_body').keydown (e) ->
+			if e.which is 13
+				$('#new_message').submit()
+				e.preventDefault()
